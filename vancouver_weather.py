@@ -7,8 +7,8 @@ url = "https://api.openweathermap.org/data/2.5/forecast?id=6173331&APPID=29c03c1
 response = requests.get(url)
 
 vancouver_weather = json.loads(response.text)
-print(vancouver_weather)
 
 weather_details = vancouver_weather['list']
-print('Current weather in Vancouver:')
-print(weather_details[0]['weather'][0]['main'], '-', weather_details[0]['weather'][0]['description'])
+print('Weather in Vancouver:')
+for date in range(32, 40):
+    print(weather_details[date]['dt_txt'], '-', weather_details[date]['weather'][0]['description'])
